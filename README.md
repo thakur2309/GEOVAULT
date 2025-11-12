@@ -2,37 +2,65 @@
 
 ![Status: Lab Only](https://img.shields.io/badge/Status-Lab--Only-yellow?style=for-the-badge) ![Made with ❤️](https://img.shields.io/badge/Author-Firewall%20Breaker-blue?style=for-the-badge)
 
-> **Short description:** A polished front‑end demo that showcases browser geolocation flows, animated UI, and safe local logging for educational and defensive research. **This repository is explicitly for lab use and learning — it does not implement real exploitation techniques.**
+> **Short description:** **GeoVault** is an educational location-tracking demonstration project designed for 
+students and cybersecurity learners who want to understand how browser-based 
+geolocation works in real environments.  
+
+The tool shows how a user’s device can share approximate latitude, longitude, 
+accuracy, and IP details *only after* the user explicitly grants permission 
+through the browser’s built-in location API.
+
+The goal is to teach how ethical hackers, penetration testers, and researchers 
+can study web-based tracking mechanisms responsibly — by hosting everything 
+locally and focusing on consent, privacy, and data awareness.  
+
+🧩 GeoVault is **not a spying or hacking tool** — it is built to raise awareness, 
+improve ethical understanding, and promote cybersecurity education through 
+controlled and consent-based demonstrations.
 
 ---
 
 ## 🎯 Project purpose
 
-WiFi HACK X is a **visual simulation** that demonstrates how a modern, animated cybersecurity UI can request permissions, display progress and notifications, and POST location data to a local logger for research. It is built to teach UX, consent flows, and privacy-aware logging — not to perform or instruct unauthorized access.
+The main purpose of the **GeoVault** project is to demonstrate how web browsers handle 
+location permission requests and how backend scripts can safely log such data for 
+educational or research use.
 
+It was built as part of a cybersecurity awareness and ethical hacking learning module.  
+The tool visually explains:
+- How geolocation APIs in browsers work.
+- How front-end JavaScript interacts with back-end scripts (like PHP) to log data.
+- How ethical hackers and security researchers study such data flows responsibly.
+- How consent and safe local hosting can be enforced in a demo.
 ---
+## 💻 Platform Support
 
-## 🔎 Files of interest (from your `index.html`)
+GeoVault is designed to run smoothly on the following platforms:
 
-* `index.html` — Front‑end demo containing:
+### 🟢 Termux (Android)
+- Fully supported.
+- Optimized for mobile ethical hacking and quick demonstrations.
+- Includes Termux-specific features like `termux-clipboard-set` and `termux-toast` (optional).
 
-  * Animated header and background video (`#earth`) using a Mixkit asset.
-  * A matrix rain canvas and flying node animations for visual flair.
-  * A permission popup that requests **geolocation** (`navigator.geolocation.getCurrentPosition`).
-  * A `fetch('save_location.php', ...)` call that POSTs `lat`, `lon`, `acc`, `ip` and `time` to a local endpoint.
-  * Fake/placeholder "hack" messages and simulated password cards (intended as demo content).
-  * Share buttons and promotional flows (YouTube/Instagram link and a simulated premium upsell UI).
-  * Audio feedback and notification rotation for live effect.
+### 🟣 Linux (Debian / Ubuntu / Kali)
+- Fully compatible.
+- Recommended for desktop or virtual machine environments.
+- Supports manual installation of all dependencies using apt.
 
-> ⚠️ Note: `save_location.php` was referenced in the front‑end. If present, ensure it only logs to a local file and is not publicly exposed.
+### ⚪ Other Platforms
+- macOS and Windows (via WSL or XAMPP) may partially support the PHP server, 
+  but **official support** is limited to Termux and Linux only.
 
----
+🧠 **Note:**  
+GeoVault has been created for **educational, offline, and lab-use only.**  
+Do not deploy it on public servers or use it for unauthorized tracking.  
+Always ensure you have proper **consent** before testing location-based functionalities.
 
 ## ⚖️ Safety & Legal Disclaimer
 
-* **Do not** use this project to collect data from devices you do not own or from users without explicit, documented consent. Doing so may be illegal and unethical.
-* The demo intentionally contains **mocked output** (fake passwords, fake hack success messages). Keep such content clearly labeled as `SAMPLE` in any public version.
-* If you want to publish a public demo, implement an explicit consent workflow, remove any impersonation or claims of real compromise, and present only sanitized sample data.
+⚠️ This project is created purely for **educational, ethical, and research purposes** — 
+to help students and cybersecurity learners understand web-based tracking mechanisms 
+without violating privacy laws or collecting unauthorized user information.
 
 ---
 
@@ -53,40 +81,6 @@ bash geovault.sh
 * When the user clicks **SCAN NETWORK**, the UI shows a permission popup. If the user allows, `navigator.geolocation.getCurrentPosition` is used to capture coordinates (client‑side), and the front‑end then POSTs those coordinates to `save_location.php` on the same host.
 * Immediately after, the UI runs a scripted sequence of fake log messages and reveals **simulated** password cards — purely for UX demonstration.
 * The share buttons and promotional flow are standard front‑end actions (WhatsApp, Telegram, copy‑to‑clipboard for Instagram).
-
----
-
-## 🛠️ Suggested privacy & safety improvements (practical)
-
-1. **Explicit consent checkbox + record consent** before collecting geolocation. Log consent with timestamp and a SHA256 signature of the form data (locally) so you can demonstrate consent without exposing extra PII.
-
-```html
-<!-- minimal consent flow snippet (frontend) -->
-<label><input type="checkbox" id="consent"> I consent to share my location for demo purposes</label>
-<button id="scanBtn">Scan Network</button>
-<script>
-  document.getElementById('scanBtn').onclick = () => {
-    if(!document.getElementById('consent').checked){
-      alert('Please give consent first'); return;
-    }
-    // proceed to request geolocation
-  }
-</script>
-```
-
-2. **Sanitize and reduce precision**: store coordinates rounded to 3 decimal places (≈100m) when demonstrating privacy‑preserving options.
-3. **Label demo data**: prefix any fake password or sample device name with `SAMPLE_` so researchers and reviewers cannot misinterpret output.
-4. **Local-only logging & auth**: keep `save_location.php` behind localhost and do not deploy it to a public server without strict authentication, HTTPS, and legal review.
-
----
-
-## 🧩 UX / Branding & Animated Assets
-
-* The current `index.html` uses a Mixkit video and a remote audio file. For a polished repo:
-
-  * Replace remote assets with local copies included under `assets/` with license notes.
-  * Add a small GIF (≤2–3MB) showing the UI for the README header and a branded SVG logo.
-  * Use Shields badges for `License`, `Status: Lab Only`, and `Contact`.
 
 ---
 
