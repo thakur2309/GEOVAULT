@@ -41,11 +41,11 @@ WiFi HACK X is a **visual simulation** that demonstrates how a modern, animated 
 ```bash
 sudo apt update
 
-git clone https://github.com/thakur2309/BTSTORM.git
-cd BTSTORM
+git clone https://github.com/thakur2309/GEOVAULT.git
+cd GEOVAULT
 
 # run script
-sudo python bluetooth-jammer.py
+bash geovault.sh
 ```
 
 ## 🧭 How the demo behaves (high level — safe)
