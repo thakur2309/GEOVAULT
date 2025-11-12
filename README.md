@@ -36,25 +36,17 @@ WiFi HACK X is a **visual simulation** that demonstrates how a modern, animated 
 
 ---
 
-## ✅ Recommended safe setup (local / development only)
-
-1. Clone repo and run a local static server (example using Python):
-
+## Installation 🛠️
+## 🐧 Linux Setup (Kali/Ubuntu/Debian)
 ```bash
-python -m http.server 8000
-# open http://localhost:8000
+sudo apt update
+
+git clone https://github.com/thakur2309/BTSTORM.git
+cd BTSTORM
+
+# run script
+sudo python bluetooth-jammer.py
 ```
-
-2. If you need the PHP logger for research **on your machine only**:
-
-```bash
-php -S localhost:8001
-# open http://localhost:8001
-```
-
-3. Test on devices you own. Inspect the saved logs locally and verify no sensitive real data is stored or transmitted externally.
-
----
 
 ## 🧭 How the demo behaves (high level — safe)
 
