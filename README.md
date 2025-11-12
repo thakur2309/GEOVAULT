@@ -51,11 +51,6 @@ GeoVault is designed to run smoothly on the following platforms:
 - macOS and Windows (via WSL or XAMPP) may partially support the PHP server, 
   but **official support** is limited to Termux and Linux only.
 
-🧠 **Note:**  
-GeoVault has been created for **educational, offline, and lab-use only.**  
-Do not deploy it on public servers or use it for unauthorized tracking.  
-Always ensure you have proper **consent** before testing location-based functionalities.
-
 ## ⚖️ Safety & Legal Disclaimer
 
 ⚠️ This project is created purely for **educational, ethical, and research purposes** — 
