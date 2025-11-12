@@ -126,6 +126,6 @@ Stay ethical — **Firewall Breaker** community promotes **learning & safety**, 
 </a>
 <br>
 <a href="https://www.instagram.com/sudo_xploit?igsh=MWN0YWc3N2JyenhoNw==">
-  <img src="https://img.shields.io/badge/instagram-FF0000?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
+  <img src="https://img.shields.io/badge/instagram-F56040?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
 </a>  
 <br>  
