@@ -60,9 +60,9 @@ without violating privacy laws or collecting unauthorized user information.
 ---
 
 ## Installation 🛠️
-## 🐧 Linux Setup (Kali/Ubuntu/Debian)
+## 🐧 Termux Setup (Kali/Ubuntu/Debian)
 ```bash
-sudo apt update
+ apt update && apt upgrade 
 
 git clone https://github.com/thakur2309/GEOVAULT.git
 cd GEOVAULT
